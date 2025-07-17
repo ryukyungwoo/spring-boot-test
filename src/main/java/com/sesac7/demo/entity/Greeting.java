@@ -10,7 +10,7 @@ public class Greeting {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "lang_code", nullable = false, unique = true, length = 10)
+    @Column(name = "lang_code", nullable = false, length = 10)
     private String langCode;
 
     @Column(name = "message", nullable = false)
