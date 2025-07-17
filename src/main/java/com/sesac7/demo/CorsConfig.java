@@ -11,7 +11,9 @@ public class CorsConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")                         // 모든 엔드포인트에 대해
                 .allowedOrigins("http://localhost:3000",
-                        "http://192.168.20.235:3000"
+                        "http://192.168.20.235:3000",
+                        "http://localhost",
+                        "http://192.168.20.235"
                         )   // 허용할 Origin (Next.js dev 서버)
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")                       // 모든 헤더 허용
