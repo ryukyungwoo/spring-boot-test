@@ -18,6 +18,7 @@ public class GreetingController {
     @GetMapping
     public ResponseEntity<String> greeting(@RequestParam("lang") String lang) {
         return repo.findByLangCode(lang)
+                .stream().findFirst()
                    .map(g -> ResponseEntity.ok(g.getMessage()))
                    .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND)
                                          .body("Greeting not found for lang=" + lang));
